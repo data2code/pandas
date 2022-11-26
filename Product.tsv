@@ -1,0 +1,78 @@
+ProductID	ProductName	CategoryID	UnitPrice	UnitsInStock	Discontinued
+1	Chai	1	18.0	39	False
+2	Chang	1	19.0	17	False
+3	Aniseed Syrup	2	10.0	13	False
+4	Chef Anton's Cajun Seasoning	2	22.0	53	False
+5	Chef Anton's Gumbo Mix	2	21.35	0	True
+6	Grandma's Boysenberry Spread	2	25.0	120	False
+7	Uncle Bob's Organic Dried Pears	7	30.0	15	False
+8	Northwoods Cranberry Sauce	2	40.0	6	False
+9	Mishi Kobe Niku	6	97.0	29	True
+10	Ikura	8	31.0	31	False
+11	Queso Cabrales	4	21.0	22	False
+12	Queso Manchego La Pastora	4	38.0	86	False
+13	Konbu	8	6.0	24	False
+14	Tofu	7	23.25	35	False
+15	Genen Shouyu	2	15.5	39	False
+16	Pavlova	3	17.45	29	False
+17	Alice Mutton	6	39.0	0	True
+18	Carnarvon Tigers	8	62.5	42	False
+19	Teatime Chocolate Biscuits	3	9.2	25	False
+20	Sir Rodney's Marmalade	3	81.0	40	False
+21	Sir Rodney's Scones	3	10.0	3	False
+22	Gustaf's Knackebrod	5	21.0	104	False
+23	Tunnbrod	5	9.0	61	False
+24	Guarana Fantastica	1	4.5	20	True
+25	NuNuCa Nub-Nougat-Creme	3	14.0	76	False
+26	Gumbar Gummibarchen	3	31.23	15	False
+27	Schoggi Schokolade	3	43.9	49	False
+28	Rossle Sauerkraut	7	45.6	26	True
+29	Thuringer Rostbratwurst	6	123.79	0	True
+30	Nord-Ost Matjeshering	8	25.89	10	False
+31	Gorgonzola Telino	4	12.5	0	False
+32	Mascarpone Fabioli	4	32.0	9	False
+33	Geitost	4	2.5	112	False
+34	Sasquatch Ale	1	14.0	111	False
+35	Steeleye Stout	1	18.0	20	False
+36	Inlagd Sill	8	19.0	112	False
+37	Gravad lax	8	26.0	11	False
+38	Cote de Blaye	1	263.5	17	False
+39	Chartreuse verte	1	18.0	69	False
+40	Boston Crab Meat	8	18.4	123	False
+41	Jack's New England Clam Chowder	8	9.65	85	False
+42	Singaporean Hokkien Fried Mee	5	14.0	26	True
+43	Ipoh Coffee	1	46.0	17	False
+44	Gula Malacca	2	19.45	27	False
+45	Rogede sild	8	9.5	5	False
+46	Spegesild	8	12.0	95	False
+47	Zaanse koeken	3	9.5	36	False
+48	Chocolade	3	12.75	15	False
+49	Maxilaku	3	20.0	10	False
+50	Valkoinen suklaa	3	16.25	65	False
+51	Manjimup Dried Apples	7	53.0	20	False
+52	Filo Mix	5	7.0	38	False
+53	Perth Pasties	6	32.8	0	True
+54	Tourtiere	6	7.45	21	False
+55	Pate chinois	6	24.0	115	False
+56	Gnocchi di nonna Alice	5	38.0	21	False
+57	Ravioli Angelo	5	19.5	36	False
+58	Escargots de Bourgogne	8	13.25	62	False
+59	Raclette Courdavault	4	55.0	79	False
+60	Camembert Pierrot	4	34.0	19	False
+61	Sirop d'erable	2	28.5	113	False
+62	Tarte au sucre	3	49.3	17	False
+63	Vegie-spread	2	43.9	24	False
+64	Wimmers gute Semmelknodel	5	33.25	22	False
+65	Louisiana Fiery Hot Pepper Sauce	2	21.05	76	False
+66	Louisiana Hot Spiced Okra	2	17.0	4	False
+67	Laughing Lumberjack Lager	1	14.0	52	False
+68	Scottish Longbreads	3	12.5	6	False
+69	Gudbrandsdalsost	4	36.0	26	False
+70	Outback Lager	1	15.0	15	False
+71	Flotemysost	4	21.5	26	False
+72	Mozzarella di Giovanni	4	34.8	14	False
+73	Rod Kaviar	8	15.0	101	False
+74	Longlife Tofu	7	10.0	4	False
+75	Rhonbrau Klosterbier	1	7.75	125	False
+76	Lakkalikoori	1	18.0	57	False
+77	Original Frankfurter grune Sobe	2	13.0	32	False
