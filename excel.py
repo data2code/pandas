@@ -11,12 +11,21 @@ import os
 import re
 from six.moves import range
 import traceback
+import numpy as np
+
+def drop_empty_cols(data):
+    if len(data)==0: return data
+    data=np.array(data)
+    cols=~np.all(pd.isnull(data), axis=0)
+    if len(cols)==0: return []
+    data=data[:, cols]
+    return list(data)
 
 class Excel:
     """This class contains static methods to manipulate Excel files in either 2003 (.xls) or 2007 (.xlsx) format"""
 
     @staticmethod
-    def read_xlsx(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False):
+    def read_xlsx(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False, drop_empty_columns=True):
         """Read an xlsx file, each sheet becomes a table.
         input and output are the same as read()"""
         file_format = os.path.splitext(filename)[-1]
@@ -43,6 +52,7 @@ class Excel:
                 data.append([ ws.cell(row=row, column=col).value for col in range(1,ncol+1)])
             #for row in ws.iter_rows(ws.calculate_dimension()):
             #    data.append([ cell.internal_value for cell in row])
+            if drop_empty_columns: data=drop_empty_cols(data)
             if len(data):
                 if Excel.is_header(data[0], l_allow_int=l_allow_int_header):
                     header=data.pop(0)
@@ -79,7 +89,7 @@ class Excel:
             return xlrd.error_text_from_code[cell.value]
 
     @staticmethod
-    def read_xls(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False):
+    def read_xls(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False, drop_empty_columns=True):
         """Read an xls file, each sheet becomes a table.
         input and output are the same as read()"""
         wb=xlrd.open_workbook(filename=filename)
@@ -100,6 +110,7 @@ class Excel:
             data=[]
             for rx in range(ws.nrows):
                 data.append([ Excel.xls_proc_text(ws.cell(rx, cx)) for cx in range(ws.ncols) ])
+            if drop_empty_columns: data=drop_empty_cols(data)
             if len(data):
                 if Excel.is_header(data[0], l_allow_int=l_allow_int_header):
                     header=data.pop(0)
@@ -207,7 +218,7 @@ class Excel:
             return s=="PK"
 
     @staticmethod
-    def read(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False):
+    def read(filename, sheet_name=None, sheet_index=None, l_allow_int_header=False, drop_empty_columns=True):
         """Read an xlsx/xls file, each sheet becomes a table.
         filename: str, filename
         sheet_name: str, default None. If specified, it only reads the sheet that matches the name
@@ -219,9 +230,9 @@ class Excel:
         return tuple: (tables, names, headers). tables is a list of tables. Empty sheet gives a None table object.
             names is the list of sheet names. headers is a list of boolean, indicating whether column header comes from sheet"""
         if Excel.is_xlsx(filename):
-            return Excel.read_xlsx(filename, sheet_name, sheet_index, l_allow_int_header)
+            return Excel.read_xlsx(filename, sheet_name, sheet_index, l_allow_int_header, drop_empty_columns)
         else:
-            return Excel.read_xls(filename, sheet_name, sheet_index, l_allow_int_header)
+            return Excel.read_xls(filename, sheet_name, sheet_index, l_allow_int_header, drop_empty_columns)
 
     @staticmethod
     def write(filename, tables, names=None, headers=None, format='XLSX'):
